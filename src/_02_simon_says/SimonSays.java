@@ -51,7 +51,7 @@ JOptionPane.showMessageDialog(null, "Press the matching key when 'Simon says' ot
 					int points = 0;
 					int keyCode = e.getKeyCode();
 		// 16. If the keyCode matches the imageIndex and "Simon says"
-					if(keyCode==imageIndex&& !simonSays) {
+					if(keyCode==imageIndex&& simonSays) {
 					
 		// 17. Increase the value of score
 						points  = points+1;
@@ -70,6 +70,9 @@ JOptionPane.showMessageDialog(null, "Press the matching key when 'Simon says' ot
 						speak("You were correct");
 					
 		// 22. Increment tries by 1
+						tries+=1;
+					}else {
+						speak("You were incorrect");
 						tries+=1;
 					}
 		// 25. If tries is greater than 9 (or however many you want)...
