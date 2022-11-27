@@ -1,4 +1,4 @@
-package _11_whack_a_mole;
+package CSP;
 
 
 import java.awt.event.ActionEvent;
