@@ -1,11 +1,10 @@
-
+package CSP;
 import javax.swing.JFrame;
-
 public class guiRunner{
 	JFrame frame;
-//	final static int WIDTH = 500;
-//	final static int HEIGHT = 800;
-	//GamePanel gp;
+	final static int WIDTH = 500;
+	final static int HEIGHT = 800;
+	GamePanel gp;
 	public static void main(String[] args) {
 		
 	
@@ -17,15 +16,15 @@ public class guiRunner{
 
 	public guiRunner() {
 		frame = new JFrame();
-	//	gp = new GamePanel();
+		gp = new GamePanel();
 	}
-//ddsda
+
 	void setup() {
-	//	frame.add(gp);
-//frame.setSize(WIDTH, HEIGHT);
-//frame.setVisible(true);
-//frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//frame.addKeyListener(gp);
+		frame.add(gp);
+		frame.setSize(WIDTH, HEIGHT);
+		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.addKeyListener(gp);
 
 
 	}
