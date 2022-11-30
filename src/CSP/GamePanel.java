@@ -10,6 +10,8 @@ import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
 
+import _09_latest_tweet.LatestTweet;
+
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int MENU = 0;
 	final int GAME = 1;
@@ -52,7 +54,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+//		if (currentState == MENU) {
+//			//updateMenuState();
+//		} else if (currentState == GAME) {
+//			
+//		} else if (currentState == END) {
+//			//updateEndState();
+//		}
 		
 	}
 
@@ -64,10 +72,9 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-
+		if (e.getKeyCode() == KeyEvent.VK_C) {
 			if (currentState == MENU) {
-				currentState = GAME;
+				new WhackAMole().DrawButtons();
 			}
 
 			} 
