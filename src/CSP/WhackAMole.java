@@ -1,6 +1,7 @@
 package CSP;
 
 
+import java.applet.AudioClip;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -10,7 +11,7 @@ import java.util.Random;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-
+import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -74,16 +75,16 @@ public class WhackAMole implements ActionListener {
 			}
 			if (i == 4) {
 				speak("imagine being bad I cant relate");
-			} else if (MolesMissed == 5) {
-				JOptionPane.showMessageDialog(null, "You have missed 5 times, you have lost the game!");
+			} else if (MolesMissed == 3) {
+				JOptionPane.showMessageDialog(null, "You have missed 3 times, you have lost the game!");
 				frame.dispose();
 			}
 		} else if (buttonClicked == moleButton) {
 			MolesWhacked++;
 		
 
-			if (MolesWhacked == 10) {
-				endGame(startDate, 10);
+			if (MolesWhacked == 5) {
+				endGame(startDate, 5);
 				frame.dispose();
 			} else {
 				frame.dispose();

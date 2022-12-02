@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import _09_latest_tweet.LatestTweet;
@@ -18,7 +19,8 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int END = 2;
 	int currentState = MENU;
 	Font titleFont1;
-	Font titleFont2, titleFont = new Font("Arial", Font.PLAIN, 12), titleFont21 = new Font("Arial", Font.PLAIN, 35);
+	Font titleFont2, titleFont = new Font("Arial", Font.PLAIN, 12), titleFont21 = new Font("Arial", Font.PLAIN, 35),subTitleFont = new Font("Calibri", Font.BOLD, 20);;
+//	titleFont1 = new Font("Arial", Font.PLAIN, 35);
 	public void paintComponent(Graphics g) {
 
 		if (currentState == MENU) {
@@ -43,14 +45,17 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	
 		g.setColor(Color.BLACK);
 		g.drawString("Shivam's Arcade", 110, 50);
+		g.setFont(subTitleFont);
+		g.setColor(Color.RED);
+		g.drawString("Press enter to exit the arcade", 110, 500);
 		g.setFont(titleFont);
 		g.setColor(Color.BLACK);
-		g.drawString("Press the following key to play each game", middle, 100);
+		
 
 		g.drawString("WhackAMole(Press C to start)", 155, 200);
 		g.drawString("SlotMachine(Press V to start)", 155, 300);
 		g.drawString("Jeopardy(Press B to start)", 155, 400);
-
+	//	g.drawString("Press enter to exit the arcade", 155, 500);
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -72,14 +77,31 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
+			
+			if (currentState == MENU) {
+				JOptionPane.showMessageDialog(null, "Welcome to Shivam's Arcade. Press shift to exit a game and go back to the menu.");
+			}
+		//f	
+
+			}
+if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+	
+	if (currentState == MENU) {
+		System.exit(currentState);
+	}
+}
 		if (e.getKeyCode() == KeyEvent.VK_C) {
+			
 			if (currentState == MENU) {
 				new WhackAMole().DrawButtons();
 			}
+			
 
-			} 
+			}
+		}
 		
-	}
+	
 
 	@Override
 	public void keyReleased(KeyEvent e) {
