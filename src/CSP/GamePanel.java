@@ -19,7 +19,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int END = 2;
 	int currentState = MENU;
 	Font titleFont1;
-	Font titleFont2, titleFont = new Font("Arial", Font.PLAIN, 12), titleFont21 = new Font("Arial", Font.PLAIN, 35),subTitleFont = new Font("Calibri", Font.BOLD, 20);;
+	Font titleFont2, titleFont = new Font("Arial", Font.PLAIN, 12), titleFont21 = new Font("Corbel", Font.PLAIN, 45),subTitleFont = new Font("Calibri", Font.BOLD, 20);;
 //	titleFont1 = new Font("Arial", Font.PLAIN, 35);
 	public void paintComponent(Graphics g) {
 
@@ -37,17 +37,18 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	}
 	void drawMenuState(Graphics g) {
 		int middle = (GamePanel.WIDTH/2)+140;
-		g.setColor(Color.green);
 		g.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT);
-		g.setColor(Color.green);
+		//g.setColor(Color.green);
 		g.setFont(titleFont21);
 		// g.drawImage(image, 0, 0, BattleBoats.WIDTH, BattleBoats.HEIGHT, null);
 	
-		g.setColor(Color.BLACK);
-		g.drawString("Shivam's Arcade", 110, 50);
+		g.setColor(Color.green);
+		g.drawString("Shivam's Arcade", 105, 50);
 		g.setFont(subTitleFont);
 		g.setColor(Color.RED);
 		g.drawString("Press enter to exit the arcade", 110, 500);
+		g.setColor(Color.BLUE);
+		g.drawString("Press shift for instructions", 135, 125);
 		g.setFont(titleFont);
 		g.setColor(Color.BLACK);
 		
@@ -80,7 +81,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
 			
 			if (currentState == MENU) {
-				JOptionPane.showMessageDialog(null, "Welcome to Shivam's Arcade. Press shift to exit a game and go back to the menu.");
+				JOptionPane.showMessageDialog(null, "Welcome to Shivam's Arcade. Press enter to exit a game and go back to the menu.");
 			}
 		//f	
 
@@ -94,13 +95,22 @@ if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 		if (e.getKeyCode() == KeyEvent.VK_C) {
 			
 			if (currentState == MENU) {
+				//currentState = GAME;
 				new WhackAMole().DrawButtons();
 			}
 			
-
+			if (e.getKeyCode() == KeyEvent.VK_V) {
+				
+				if (currentState == MENU) {
+				//	currentState = GAME;
+					new SlotMachine().run();
+				}
 			}
 		}
-		
+		}
+void exitProgram(int cs) {
+	System.exit(cs);
+	}
 	
 
 	@Override

@@ -1,4 +1,4 @@
-package _12_slot_machine;
+package CSP;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
