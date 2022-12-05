@@ -98,7 +98,7 @@ public class SlotMachine implements ActionListener {
 					panel.add(image3);
 					orange++;
 				}
-
+//lol
 			}
 			if (cherry == 3) {
 				JOptionPane.showMessageDialog(null, "You Win! Nice job getting 3 cherries in a row!");
