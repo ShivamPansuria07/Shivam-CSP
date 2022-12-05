@@ -67,7 +67,7 @@ public class Jeopardy implements ActionListener {
 		secondButton.addActionListener(this);
 		thirdButton.addActionListener(this);
 		fourthButton.addActionListener(this);
-
+		//lines 70-76 i found as a fix to an  error I had in my code source: stack overflow
 		frame.pack();
 		quizPanel.setLayout(new GridLayout(buttonCount + 1, 3));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);

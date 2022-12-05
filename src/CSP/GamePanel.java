@@ -11,18 +11,16 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import _09_latest_tweet.LatestTweet;
+import extraWork.LatestTweet;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int MENU = 0;
-//final int GAME = 1;
-//	final int END = 2;
 	int currentState = MENU;
 	Font titleFont1;
 	Font titleFont2, titleFont = new Font("Arial", Font.PLAIN, 12), titleFont21 = new Font("Corbel", Font.PLAIN, 45),
 			subTitleFont = new Font("Calibri", Font.BOLD, 20);;
 
-//	titleFont1 = new Font("Arial", Font.PLAIN, 35);
+
 	public void paintComponent(Graphics g) {
 
 		if (currentState == MENU) {
@@ -35,7 +33,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 //		} else if (currentState == END) {
 //			//drawEndState(g);
 //		}
-//j
+
 	}
 
 	void drawMenuState(Graphics g) {
