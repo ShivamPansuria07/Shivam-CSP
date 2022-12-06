@@ -11,7 +11,7 @@ public class guiRunner{
 		guiRunner gui = new guiRunner();
 		gui.setup();
 
-
+//f
 	}
 
 	public guiRunner() {
@@ -25,7 +25,7 @@ public class guiRunner{
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.addKeyListener(gp);
-
+//loll
 
 	}
 }

@@ -11,7 +11,6 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import extraWork.LatestTweet;
 
 public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	final int MENU = 0;
@@ -22,17 +21,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 
 
 	public void paintComponent(Graphics g) {
-
-		if (currentState == MENU) {
+// I tried to add different game states depending where the user is to quickly allow for the user to simply press a key to enter the menu
+// but this didnt end up working which is why there are so many parts in my code where it checks if the current state is equal to the meny
+		
 			drawMenuState(g);
-		}
-//		else if (currentState == GAME) {
-//			System.out.println("game state");
-//			//drawGameState(g);
-//
-//		} else if (currentState == END) {
-//			//drawEndState(g);
-//		}
+		
+
 
 	}
 
@@ -54,7 +48,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		g.setColor(Color.BLACK);
 
 		g.drawString("WhackAMole(Press C to start)", 155, 200);
-		g.drawString("SlotMachine(Press V to start)", 155, 300);
+		g.drawString("Mr.Hare Machine(Press V to start)", 155, 300);
 		g.drawString("Jeopardy(Press B to start)", 155, 400);
 		// g.drawString("Press enter to exit the arcade", 155, 500);
 	}
@@ -81,10 +75,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
 
-			if (currentState == MENU) {
+			
 				JOptionPane.showMessageDialog(null,
 						"Welcome to Shivam's Arcade. Press enter to exit a game and go back to the menu.");
-			}
+			
 			
 
 		}
@@ -111,10 +105,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 		
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
 
-			if (currentState == MENU) {
+		
 				JOptionPane.showMessageDialog(null, "Thank you for visiting!");
 				System.exit(currentState);
-			}
+			
 		}
 	}
 

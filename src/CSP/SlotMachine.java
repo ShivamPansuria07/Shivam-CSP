@@ -16,15 +16,15 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class SlotMachine implements ActionListener {
-	JLabel Cherry = new JLabel();
-	JLabel Lime = new JLabel();
-	JLabel Orange = new JLabel();
+	JLabel Kevin = new JLabel();
+	JLabel White = new JLabel();
+	JLabel Shakeri = new JLabel();
 	JPanel panel = new JPanel();
 	JFrame frame = new JFrame();
 	Random rand = new Random();
-	int cherry = 0;
-	int lime = 0;
-	int orange = 0;
+	int kevin = 0;
+	int white = 0;
+	int shakeri = 0;
 	int wins = 0;
 	JButton button = new JButton();
 
@@ -32,21 +32,21 @@ public class SlotMachine implements ActionListener {
 		panel.add(button);
 		frame.add(panel);
 		panel.setSize(500, 600);
-
-		Cherry = createLabelImage("Cherry.png");
-		Orange = createLabelImage("Orange.png");
-		Lime = createLabelImage("Lime.png");
-		Cherry.setPreferredSize(new Dimension(100, 100));
-		Lime.setPreferredSize(new Dimension(100, 100));
-		Orange.setPreferredSize(new Dimension(100, 100));
-		panel.add(Cherry);
-		panel.add(Orange);
-		panel.add(Lime);
-
-		button.setText("SPIN");
+		frame.setTitle("Mr.Hare Machine");
+		Kevin = createLabelImage("kevin.jpg");
+		White = createLabelImage("white.jpg");
+		Shakeri = createLabelImage("shakeri2.jpg");
+		Kevin.setPreferredSize(new Dimension(100, 100));
+		White.setPreferredSize(new Dimension(100, 100));
+		Shakeri.setPreferredSize(new Dimension(100, 100));
+		panel.add(Kevin);
+		panel.add(White);
+		panel.add(Shakeri);
+		button.setText("Find Mr.Hare!");
 		button.addActionListener(this);
 		frame.pack();
 		frame.setVisible(true);
+		JOptionPane.showMessageDialog(null, "Welcome to 'Mr.Hare Machine' Get 3 Mr.Hare's in a row to win!");
 	}
 
 	public JLabel createLabelImage(String fileName) {
@@ -59,7 +59,7 @@ public class SlotMachine implements ActionListener {
 		JLabel imageLabel = new JLabel(icon);
 		return imageLabel;
 	}
-
+//d
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		JButton buttonClicked = (JButton) e.getSource();
@@ -69,56 +69,50 @@ public class SlotMachine implements ActionListener {
 			frame.getContentPane().removeAll();
 			panel = new JPanel();
 			panel.add(button);
-			cherry = 0;
-			lime = 0;
-			orange = 0;
-			
+			white = 0;
+			kevin = 0;
+			shakeri = 0;
 			for (int i = 0; i < 3; i++) {
 
 				int pic = rand.nextInt(3);
 
-				if (pic == 0) {
-					JLabel image = createLabelImage("Cherry.png");
+				if (pic == 1) {
+					JLabel image = createLabelImage("kevin.jpg");
 					image.setPreferredSize(new Dimension(100, 100));
 					panel.add(image);
-					cherry++;
+					kevin++;
 
 				}
-				if (pic == 1) {
-
-					JLabel image2 = createLabelImage("Lime.png");
+				if (pic == 0) {
+					JLabel image2 = createLabelImage("white.jpg");
 					image2.setPreferredSize(new Dimension(100, 100));
 					panel.add(image2);
-					lime++;
+					white++;
 				}
 				if (pic == 2) {
-
-					JLabel image3 = createLabelImage("Orange.png");
+					JLabel image3 = createLabelImage("shakeri2.jpg");
 					image3.setPreferredSize(new Dimension(100, 100));
 					panel.add(image3);
-					orange++;
+					shakeri++;
 				}
 //lol
 			}
-			if (cherry == 3) {
-				JOptionPane.showMessageDialog(null, "You Win! Nice job getting 3 cherries in a row!");
+			if (kevin == 3) {
+				JOptionPane.showMessageDialog(null, "You Win! Nice job getting 3 Mr.Hare's in a row");
+				wins++;
+				frame.dispose();
+			}
+			if (white == 3) {
+				JOptionPane.showMessageDialog(null, "You failed.");
+				//wins++;
+				frame.dispose();
+			}
+			if (shakeri == 3) {
+				JOptionPane.showMessageDialog(null, "You failed.");
+				//wins++;
+				frame.dispose();
+			}
 				
-				wins++;
-			}
-			if (lime == 3) {
-				JOptionPane.showMessageDialog(null, "You Win! Nice job getting 3 limes in a row! ");
-				wins++;
-			}
-			if (orange == 3) {
-				JOptionPane.showMessageDialog(null, "You Win! Nice job getting 3 oranges in a row!");
-				wins++;
-			}
-			
-			
-				if(wins>1) {	
-					System.out.println("You have "+wins+" wins");
-					
-					}
 			
 			
 			

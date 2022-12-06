@@ -184,7 +184,7 @@ public class Jeopardy implements ActionListener {
 	void showIncorrectImage() {
 		showImage("incorrect.jpg");
 	}
-
+//code taken from previous coding class
 	private void showImage(String fileName) {
 		JFrame frame = new JFrame();
 		URL imageURL = getClass().getResource(fileName);
