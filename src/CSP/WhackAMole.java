@@ -150,7 +150,7 @@ public class WhackAMole implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-			System.out.println("wwww");
+			frame.dispose();
 //			GamePanel gp = new GamePanel();
 //			gp.currentState = gp.MENU;
 //			gp.exitProgram(gp.currentState);

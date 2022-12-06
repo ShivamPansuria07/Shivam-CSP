@@ -28,20 +28,25 @@ public class Jeopardy implements ActionListener {
 	private JButton secondButton;
 	private JButton thirdButton, fourthButton;
 	private JPanel quizPanel;
+	JFrame frame = new JFrame();
+	boolean b1 = false;
+	boolean b2 = false;
+	boolean b3 = false;
+	boolean b4 = false;
 	private int score = 0;
 	private JLabel scoreBox = new JLabel("0");
 	private int buttonCount = 0;
 
 	public void run() {
 
-		JFrame frame = new JFrame();
+		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		quizPanel = new JPanel();
 		frame.setLayout(new BorderLayout());
 
 		frame.setVisible(true);
 
-		frame.setTitle("Jeapordy");
+		frame.setTitle("CSP Jeapordy");
 
 		JPanel Header = new JPanel();
 		Header = createHeader("Questions about computer science!");
@@ -49,7 +54,7 @@ public class Jeopardy implements ActionListener {
 		quizPanel.add(Header);
 
 		frame.add(quizPanel);
-
+		
 		firstButton = createButton("100");
 
 		quizPanel.add(firstButton);
@@ -87,32 +92,38 @@ public class Jeopardy implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-
+		
 		buttonPressed = (JButton) e.getSource();
+	//if all boolean variables are true(the user has done each question)
+		
 
 		if (buttonPressed == firstButton) {
-
+			b1 = true;
 			askQuestion("Who is the founder of computer science?", "Alan Turing", 100);
 			firstButton.removeAll();
 
 		}
 
 		if (buttonPressed == secondButton) {
-
+			b2 = true;
 			askQuestion("Who is the best teacher at CCA?", "Mr.Hare", 300);
 
 			secondButton.removeAll();
 		}
 		if (buttonPressed == thirdButton) {
-
+			b3 = true;
 			askQuestion("What is the name of one the two computer scientists that created the internet?", "Vinton Cerf",500);
-			// Bob Kahn is another answer for this question
+			// BobKlahn is another answer for this question
 			thirdButton.removeAll();
 		}
 		if (buttonPressed == fourthButton) {
-
+			b4 = true;
 			askQuestion("Who created ARPANET?", "DARPA", 1000);
 			fourthButton.removeAll();
+		}
+		if(b1 && b2 && b3 && b4) {
+			JOptionPane.showMessageDialog(null, "You final score is: "+score);
+			frame.dispose();
 		}
 	}
 
@@ -120,10 +131,7 @@ public class Jeopardy implements ActionListener {
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
 		String answer = JOptionPane.showInputDialog(null, question);
-//		while(answer == "") {
-//		JOptionPane.showMessageDialog(null, "Please enter a valid answer!");
-//		answer = JOptionPane.showInputDialog(null, question);
-//		}
+
 
 		if (answer.contains("Hare") && prizeMoney == 300 || answer.contains("hare") && prizeMoney == 300) {
 			score += prizeMoney;
@@ -177,13 +185,7 @@ public class Jeopardy implements ActionListener {
 		return panelj;
 	}
 
-	void showCorrectImage() {
-		showImage("correct.jpg");
-	}
-
-	void showIncorrectImage() {
-		showImage("incorrect.jpg");
-	}
+	
 //code taken from previous coding class
 	private void showImage(String fileName) {
 		JFrame frame = new JFrame();

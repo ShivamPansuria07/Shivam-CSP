@@ -97,6 +97,14 @@ public class SlotMachine implements ActionListener {
 				}
 //lol
 			}
+			
+				
+			
+			
+			
+			panel.setSize(500, 600);
+			frame.add(panel);
+			frame.pack();
 			if (kevin == 3) {
 				JOptionPane.showMessageDialog(null, "You Win! Nice job getting 3 Mr.Hare's in a row");
 				wins++;
@@ -112,13 +120,6 @@ public class SlotMachine implements ActionListener {
 				//wins++;
 				frame.dispose();
 			}
-				
-			
-			
-			
-			panel.setSize(500, 600);
-			frame.add(panel);
-			frame.pack();
 			
 		}
 
