@@ -74,10 +74,10 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		if (e.getKeyCode() == KeyEvent.VK_SHIFT) {
-
+//instruction code
 			
 				JOptionPane.showMessageDialog(null,
-						"Welcome to Shivam's Arcade. Press enter to exit a game and go back to the menu.");
+						"Welcome to Shivam's Arcade. Each game has instructions if neccesary and closes automatically once you finish playing.");
 			
 			
 
